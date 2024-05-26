@@ -31,7 +31,7 @@ class Player(GameSprite):
             self.rect.y += self.speed
 
 #создание окна и его пораметры
-back = (200, 255, 255)
+back = (133, 199, 204)
 win_width = 600
 win_height = 500
 window = display.set_mode((win_width, win_height))
@@ -44,16 +44,16 @@ clock = time.Clock()
 FPS = 60
 
 #создание игроков
-raketL = Player('qqq.png', 10, 200, 4, 50, 150)
-raketR = Player('qqq.png', 540, 200, 4, 50, 150)
+raketL = Player('qqq.png', 10, 180, 4, 50, 150)
+raketR = Player('qqq.png', 540, 180, 4, 50, 150)
 #создание мяча
 ball = GameSprite('boll.png', 200, 200, 4, 50, 50)
 
 font.init()
 font = font.Font(None, 35)
 #победа того или иного игрока
-lose2 = font.render("Левый игрок выиграл!", True, (180, 0, 0))
-lose1 = font.render('Правый игрок выиграл!', True, (180, 0, 0))
+lose2 = font.render("Левый игрок выиграл!", True, (55, 139, 145))
+lose1 = font.render('Правый игрок выиграл!', True, (55, 139, 145))
 
 speed_x = 2
 speed_y = 2
@@ -82,13 +82,13 @@ while game:
 #если мяч улетел дальше ракетки, выводим условие проигрыша для второго игрока
         if ball.rect.x < 0:
             finish = True
-            window.blit(lose1, (200, 200))
+            window.blit(lose1, (165, 220))
             game_over = True
         
 #если мяч улетел дальше ракетки, выводим условие проигрыша для второго игрока
         if ball.rect.x > win_width:
             finish = True
-            window.blit(lose2, (200, 200))
+            window.blit(lose2, (165, 220))
             game_over = True
         
         raketL.reset()
